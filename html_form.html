@@ -1,0 +1,114 @@
+<!-- Written by llable -->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>HTML-form</title>
+    <meta charset="utf-8">
+    <!-- Link bootstrap stylesheet -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <!-- For Dropdown button -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+</head>
+
+<body>    
+    <div class="container">
+        <div class="page-header">
+            <h1>Form practices <small>Ella Kim</small></h1>
+        </div>
+        <form>
+            <!-- PART 1 -->
+            <div class="alert alert-info" role="alert">
+                <strong>PART 1</strong> In div class, <strong>alert-info</strong> can be replaced with <strong>alert-danger</strong>
+            </div>
+            <div class="form-group">
+                <span class="glyphicon glyphicon glyphicon-earphone" aria-hidden="true"></span>
+                <label for="InputStation">Fax </label>
+                <input type="text" class="form-control" id="Station" placeholder="Please enter your fax number">
+            </div>
+            <div class="form-group">
+                <span class="glyphicon glyphicon glyphicon-user" aria-hidden="true"></span>
+                <label for="InputID">User ID</label>
+                <input type="text" class="form-control" id="Agent ID" placeholder="Please enter your ID">
+            </div>
+            <button class="btn btn-primary" type="button" id="Login" onclick="LoginListener()">Log in</button>
+            <button class="btn btn-danger" type="button" id="Logout" onclick="LogoutListener()">Logout</button>
+            <!-- Dropdown button -->
+            <div class="btn-group">
+                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Choice me! 
+                    <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" role="menu">
+                    <li><a href="#">1</a></li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li><a href="#">4</a></li>
+                    <li><a href="#">5</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#">Please choose one!</a></li>
+                </ul>
+            </div>
+
+            <!-- This is for margin -->
+            <br><br>
+            <div class="alert alert-info" role="alert" ?>
+                <strong>Part 2</strong> Call everytime!
+            </div>
+
+            <!-- PART 2 -->
+            <div class="form-group">
+                <span class="glyphicon glyphicon glyphicon-phone" aria-hidden="true"></span>
+                <label for="InputPhone">Phone Number</label>
+                <input type="number" class="form-control" id="Phone Number" placeholder="Please enter your Phone number">
+            </div>
+            <button class="btn btn-primary" type="button" id="Make" onclick="CallListener()">Call</button>
+            <button class="btn btn-danger" type="button" id="Clear" onclick="ClearListener()">Clear</button>
+            <button class="btn btn-default" type="button" id="Hold" onclick="RedialListener()">Redial</button>
+        </form>
+    </div>
+    
+    <p></p>
+
+    <script type="text/javascript">
+        // PART1
+        function LoginListener() {
+            console.info('LoginListener 실행');
+            var input_station = document.getElementById("Station").value;
+            var input_ID = document.getElementById("Agent ID").value;
+            alert('Station: '+input_station+', Agent ID: '+input_ID+', ...Login succcessfully!');
+            
+        }
+        function LogoutListener() {
+            console.info('LogoutListener 실행');
+            var input_station = document.getElementById("Station").value;
+            var input_ID = document.getElementById("Agent ID").value;
+            alert('Station: '+input_station+', Agent ID: '+input_ID+', ...Logout succcessfully!');
+            
+        }
+
+        // PART2
+        function CallListener() {
+            console.info('CallListener 실행');
+            var input_station = document.getElementById("Station").value;
+            var input_num = document.getElementById("Phone Number").value;
+            alert('Call... Phone Number: '+input_num);
+        }
+        function ClearListener() {
+            console.info('ClearListener 실행');
+            var input_station = document.getElementById("Station").value;
+            var input_num = document.getElementById("Phone Number").value;
+            alert('Clear with '+input_num+ ', ...Success!');
+        }
+        function HoldListener() {
+            console.info('HoldListener 실행');
+            var input_station = document.getElementById("Station").value;
+            var input_num = document.getElementById("Phone Number").value;
+            alert('Redial to '+input_num);
+        }
+
+    </script>
+
+</body>
+
+</html>
